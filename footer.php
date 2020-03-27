@@ -13,21 +13,14 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer bg-light text-dark pt-5 pb-5">
 		<div class="container">
 			<div class="row">
-				<div class="col">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wiki' ) ); ?>">
-						<?php
-						/* translators: %s: CMS name, i.e. WordPress. */
-						printf( esc_html__( 'Proudly powered by %s', 'wiki' ), 'WordPress' );
-						?>
-					</a>
-					<span class="sep"> | </span>
-						<?php
-						/* translators: 1: Theme name, 2: Theme author. */
-						printf( esc_html__( 'Theme: %1$s by %2$s.', 'wiki' ), 'wiki', '<a href="http://underscores.me/">Underscores.me</a>' );
-						?>
+				<div class="col-12 col-md-6 text-center text-md-left mb-3 mb-md-0">
+					Since 2020 powered by WordPress
+				</div>
+				<div class="col-12 col-md-6 text-center text-md-right">
+					 Wiki ❤️ by <a href="https://ricard.blog/">Ricard Torres</a>
 				</div> <!-- .col -->
 			</div> <!-- .row -->
 		</div><!-- .site-info -->

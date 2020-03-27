@@ -17,30 +17,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=swap" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="container-fluid">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wiki' ); ?></a>
-
-	<header id="masthead" class="site-header bg-info text-white">
+<div id="page">
+	<header id="masthead" class="site-header bg-primary text-white pt-3 pb-3 mb-3 pt-md-5 pb-md-5 mb-md-5">
 		<div class="container">
 			<div class="row">
-				<div class="col">
-				<div class="site-branding">
+				<div class="col-12 col-md-6">
+				<div class="site-branding text-center text-md-left">
 					<?php
-						the_custom_logo();
-						if ( is_front_page() && is_home() ) :
-							?>
+						the_custom_logo(); ?>
 							<h1 class="site-title"><a class="text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php
-						else :
-							?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php
-						endif;
+
+						<?php
 						$wiki_description = get_bloginfo( 'description', 'display' );
 						if ( $wiki_description || is_customize_preview() ) :
 							?>
@@ -49,7 +43,7 @@
 					</div><!-- .site-branding -->
 				</div> <!-- .col -->
 
-				<div class="col">
+				<div class="col-12 col-md-6">
 					<nav id="site-navigation" class="navbar">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wiki' ); ?></button>
 						<?php
@@ -60,9 +54,13 @@
 						?>
 					</nav><!-- #site-navigation -->
 				</div> <!-- .col -->
+
+				<div class="col-12 col-lg-6 offset-lg-3 pt-3 pt-md-5">
+					<?php get_search_form(); ?>
+				</div>
 			</div> <!-- .row -->
 		</div> <!-- .container -->
 
 	</header><!-- #masthead -->
 
-	<div id="content" class="container">
+	<div id="content" class="container mb-5">
