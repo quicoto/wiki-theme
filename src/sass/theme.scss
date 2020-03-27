@@ -1,0 +1,15 @@
+/*!
+Theme Name: Wiki
+Theme URI: https://github.com/quicoto/wiki-theme
+Author: Ricard Torres
+Author URI: https://php.quicoto.com
+Description: Theme for my Wiki
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: wiki
+*/
+@import 'bootstrap-variables';
+@import 'vendor/bootstrap/bootstrap';
+@import 'base';
+@import "components/__all_components__";

@@ -1,0 +1,12 @@
+
+@import "vendor/bootstrap/variables";
+
+::selection {
+  background: $primary;
+  color: $white;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
