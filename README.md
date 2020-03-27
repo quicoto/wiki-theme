@@ -7,10 +7,12 @@ https://getbootstrap.com/
 
 ## Plugins
 
-Minimal set of plugins, use WordPress out of the box, do not maniupate the content with custom blocks
+Recomended:
 
-- Nest pages with ease, which https://wordpress.org/plugins/wp-nested-pages/
-- Code snippets https://wordpress.org/plugins/syntax-highlighting-code-block/
+- https://wordpress.org/plugins/wp-nested-pages/
+- https://wordpress.org/plugins/syntax-highlighting-code-block/
+- https://wordpress.org/plugins/wp-dtree-30/
+- https://wordpress.org/plugins/luckywp-table-of-contents/
 
 ## Starter theme
 
