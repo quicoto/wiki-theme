@@ -1,4 +1,9 @@
 <?php
+
+require get_template_directory() . '/inc/private-site.php';
+
+require get_template_directory() . '/inc/login-redirect.php';
+
 /**
  * Wiki functions and definitions
  *
