@@ -11,7 +11,6 @@ Minimal set of plugins, use WordPress out of the box, do not maniupate the conte
 
 - Nest pages with ease, which https://wordpress.org/plugins/wp-nested-pages/
 - Code snippets https://wordpress.org/plugins/syntax-highlighting-code-block/
-- Cache https://wordpress.org/plugins/wp-super-cache/
 
 ## Starter theme
 
