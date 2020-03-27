@@ -10,7 +10,7 @@
     "css": "npm-run-all css:precompile css:autoprefix",
     "css:autoprefix": "postcss --use autoprefixer --no-map --replace style.css",
     "css:precompile": "node-sass --omitSourceMapUrl true --include-path src src/sass/theme.scss style.css",
-    "watch:css": "npm run css && onchange \"src/sass/**/*.scss\" -- npm run css",
+    "watch": "npm run css && onchange \"src/sass/**/*.scss\" -- npm run css",
     "minifyCSS": "cleancss -o style.css style.css"
   },
   "devDependencies": {

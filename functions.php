@@ -4,6 +4,12 @@ require get_template_directory() . '/inc/private-site.php';
 
 require get_template_directory() . '/inc/login-redirect.php';
 
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+if (wp_is_mobile()) {
+	add_filter('show_admin_bar', '__return_false');
+}
+
 /**
  * Wiki functions and definitions
  *
@@ -49,7 +55,7 @@ if ( ! function_exists( 'wiki_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'wiki' ),
+			'primary' => esc_html__( 'Primary', 'wiki' ),
 		) );
 
 		/*

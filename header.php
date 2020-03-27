@@ -17,6 +17,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/favicon-16x16.png">
+	<link rel="manifest" href="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/site.webmanifest">
+	<link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/safari-pinned-tab.svg" color="#00b4b3">
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#00b4b3">
+	<meta name="msapplication-config" content="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/browserconfig.xml">
+	<meta name="theme-color" content="#00b4b3">
+
+
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
@@ -28,31 +40,26 @@
 	<header id="masthead" class="site-header bg-primary text-white pt-3 pb-3 mb-3 pt-md-5 pb-md-5 mb-md-5">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-md-6">
-				<div class="site-branding text-center text-md-left">
-					<?php
-						the_custom_logo(); ?>
-							<h1 class="site-title"><a class="text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-						<?php
-						$wiki_description = get_bloginfo( 'description', 'display' );
-						if ( $wiki_description || is_customize_preview() ) :
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-dark" role="navigation">
+					<h1 class="site-title navbar-brand"><a class="text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+							</button>
+							<?php
+							wp_nav_menu( array(
+									'theme_location'    => 'primary',
+									'depth'             => 2,
+									'container'         => 'div',
+									'container_class'   => 'collapse navbar-collapse',
+									'container_id'      => 'primary-menu',
+									'menu_class'        => 'nav navbar-nav ml-auto',
+									'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+									'walker'            => new WP_Bootstrap_Navwalker(),
+							) );
 							?>
-							<p class="site-description"><?php echo $wiki_description; /* WPCS: xss ok. */ ?></p>
-						<?php endif; ?>
-					</div><!-- .site-branding -->
-				</div> <!-- .col -->
-
-				<div class="col-12 col-md-6">
-					<nav id="site-navigation" class="navbar">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wiki' ); ?></button>
-						<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						) );
-						?>
-					</nav><!-- #site-navigation -->
+					</nav>
 				</div> <!-- .col -->
 
 				<div class="col-12 col-lg-6 offset-lg-3 pt-3 pt-md-5">

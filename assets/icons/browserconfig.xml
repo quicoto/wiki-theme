@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="/wiki/wp-content/themes/wiki-theme/assets/mstile-150x150.png"/>
+            <TileColor>#00b4b3</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
