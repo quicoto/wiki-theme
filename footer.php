@@ -20,7 +20,7 @@
 					Since 2020 powered by WordPress
 				</div>
 				<div class="col-12 col-md-6 text-center text-md-right">
-					 Wiki ❤️ by <a href="https://ricard.blog/">Ricard Torres</a>
+					<a href="https://github.com/quicoto/wiki-theme">Wiki Theme</a> ❤️ by <a href="https://ricard.blog/">Ricard Torres</a>
 				</div> <!-- .col -->
 			</div> <!-- .row -->
 		</div><!-- .site-info -->
