@@ -6,9 +6,11 @@ require get_template_directory() . '/inc/login-redirect.php';
 
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
-if (wp_is_mobile()) {
-	add_filter('show_admin_bar', '__return_false');
-}
+require_once get_template_directory() . '/inc/table-of-contents.php';
+
+// Deactivate WPADMINBAR
+add_filter('show_admin_bar', '__return_false');
+
 
 /**
  * Wiki functions and definitions
@@ -34,9 +36,6 @@ if ( ! function_exists( 'wiki_setup' ) ) :
 		 * to change 'wiki' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'wiki', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
 
 		/*
 		 * Let WordPress manage the document title.
@@ -64,8 +63,6 @@ if ( ! function_exists( 'wiki_setup' ) ) :
 		 */
 		add_theme_support( 'html5', array(
 			'search-form',
-			'comment-form',
-			'comment-list',
 			'gallery',
 			'caption',
 		) );
@@ -131,15 +128,11 @@ add_action( 'widgets_init', 'wiki_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wiki_scripts() {
-	$version = '1.0.0';
+	$version = '1.1.0';
 
 	wp_enqueue_style( 'wiki-style', get_stylesheet_uri(), array(), $version );
 
 	wp_enqueue_script( 'wiki-navigation', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), $version, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'wiki_scripts' );
 

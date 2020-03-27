@@ -1,0 +1,16 @@
+// Table of Contents
+.lwptoc {
+  border-bottom: solid 1px $hr-border-color;
+}
+
+.lwptoc_item {
+  position: relative;
+  padding-left: 15px;
+
+  &:before {
+    content: '•';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -10,7 +10,11 @@
  */
 
 ?>
-
+			<p class="toc-jump text-right mb-0">
+				<a href="#content">Back to top &uarr;</a>
+			</p>
+			</div> <!--.col -->
+		</div> <!--.row -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer bg-light text-dark pt-5 pb-5">

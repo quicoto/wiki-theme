@@ -1,0 +1,12 @@
+.oclinks {
+  display: none !important;
+}
+
+.dtree a.nodeSel {
+  text-decoration: none !important;
+
+  &:before {
+    content: '👉';
+    padding: 0 5px;
+  }
+}
