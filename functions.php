@@ -12,6 +12,8 @@ require_once get_template_directory() . '/inc/table-of-contents.php';
 
 require_once get_template_directory() . '/inc/pages-list-widget.php';
 
+require_once get_template_directory() . '/inc/theme-colors.php';
+
 // Deactivate WPADMINBAR
 add_filter('show_admin_bar', '__return_false');
 
@@ -132,7 +134,7 @@ add_action( 'widgets_init', 'wiki_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wiki_scripts() {
-	$version = '1.1.7';
+	$version = '1.1.8';
 
 	wp_enqueue_style( 'wiki-style', get_stylesheet_uri(), array(), $version );
 
