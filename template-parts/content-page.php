@@ -9,12 +9,16 @@
 
 ?>
 
+<div class="row">
+	<div class="col mb-4">
+		<?php echo do_shortcode("[breadcrumb]"); ?>
+		<a class="btn btn-outline-primary d-inline-block float-right" href="<?=get_edit_post_link()?>" role="button"><span class="edit-icon">✏️</span> Edit</a>
+	</div>
+</div>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<p class="text-right">
-		<a class="btn btn-outline-primary" href="<?=get_edit_post_link()?>" role="button"><span class="edit-icon">✏️</span> Edit</a>
-	</p>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title d-inline-block pb-0">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php wiki_post_thumbnail(); ?>
