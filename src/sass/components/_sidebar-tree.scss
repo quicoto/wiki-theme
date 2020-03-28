@@ -1,3 +1,15 @@
+@mixin rotateIcon() {
+  transform: rotate(90deg);
+  left: 8px;
+}
+
+.widget_wiki-pages-list {
+  .navbar .widget-title {
+    color: $white;
+    margin-bottom: 0;
+  }
+}
+
 .pagenav {
   ul {
     margin: 0;
@@ -51,27 +63,34 @@
       &.current_page_parent,
       &.current_page_ancestor {
         &:before {
-          transform: rotate(90deg);
-          left: 8px;
+          @include rotateIcon();
+        }
+      }
+
+      @media (min-width: 768px) {
+        &:before {
+          @include rotateIcon();
         }
       }
     }
   }
 }
 
-.pagenav  ul ul,
-.pagenav .current_page_item ul ul,
-.pagenav .current_page_ancestor ul ul,
-.pagenav .current_page_ancestor .current_page_item ul ul,
-.pagenav .current_page_ancestor .current_page_ancestor ul ul {
-  display: none;
-}
+@media (max-width: 768px) {
+  .pagenav  ul ul,
+  .pagenav .current_page_item ul ul,
+  .pagenav .current_page_ancestor ul ul,
+  .pagenav .current_page_ancestor .current_page_item ul ul,
+  .pagenav .current_page_ancestor .current_page_ancestor ul ul {
+    display: none;
+  }
 
-.pagenav .current_page_item ul,
-.pagenav .current_page_ancestor ul,
-.pagenav .current_page_ancestor .current_page_item ul,
-.pagenav .current_page_ancestor .current_page_ancestor ul,
-.pagenav .current_page_ancestor .current_page_ancestor .current_page_item ul,
-.pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul {
-    display: block;
+  .pagenav .current_page_item ul,
+  .pagenav .current_page_ancestor ul,
+  .pagenav .current_page_ancestor .current_page_item ul,
+  .pagenav .current_page_ancestor .current_page_ancestor ul,
+  .pagenav .current_page_ancestor .current_page_ancestor .current_page_item ul,
+  .pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul {
+      display: block;
+  }
 }

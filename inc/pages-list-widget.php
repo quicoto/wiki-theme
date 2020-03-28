@@ -25,11 +25,27 @@ class My_Widget extends WP_Widget {
     public function widget( $args, $instance ) {
       echo $args['before_widget'];
 
+      $customTitle = '';
+
       if ( ! empty( $instance['title'] ) ) {
-          echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+          $customTitle = $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
       }
 
-      echo '<div class="pagenav">';
+
+    if (wp_is_mobile()) {
+        $showOnLoad = '';
+        echo '<nav class="navbar navbar-dark bg-primary">
+                ' . $customTitle . '
+                <button class="navbar-toggler" type="button" data-toggle="collapse" ata-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </nav>';
+    } else {
+      $showOnLoad = 'show';
+      echo $customTitle;
+    }
+
+      echo '<div class="pagenav collapse ' . $showOnLoad .'" id="collapseExample">';
         echo '<ul>';
           print_r(wp_list_pages(array(
             'sort_column' => 'post_name',
