@@ -37,7 +37,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page">
-	<header id="masthead" class="site-header bg-primary text-white pt-3 pb-3 mb-3 pt-md-5 pb-md-5 mb-md-5">
+	<header id="masthead" class="site-header bg-primary text-white pt-3 pb-3 mb-3">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -62,7 +62,7 @@
 					</nav>
 				</div> <!-- .col -->
 
-				<div class="col-12 col-lg-6 offset-lg-3 pt-3 pt-md-5">
+				<div class="col-12 col-lg-6 offset-lg-3 pt-3">
 					<?php get_search_form(); ?>
 				</div>
 			</div> <!-- .row -->
