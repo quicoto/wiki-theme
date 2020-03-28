@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/inc/automatic-updates.php';
+
 require get_template_directory() . '/inc/private-site.php';
 
 require get_template_directory() . '/inc/login-redirect.php';
@@ -7,6 +9,8 @@ require get_template_directory() . '/inc/login-redirect.php';
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 require_once get_template_directory() . '/inc/table-of-contents.php';
+
+require_once get_template_directory() . '/inc/pages-list-widget.php';
 
 // Deactivate WPADMINBAR
 add_filter('show_admin_bar', '__return_false');
@@ -118,8 +122,8 @@ function wiki_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'wiki' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'wiki_widgets_init' );
