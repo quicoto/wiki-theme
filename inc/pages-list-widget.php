@@ -34,6 +34,7 @@ class My_Widget extends WP_Widget {
           print_r(wp_list_pages(array(
             'sort_column' => 'post_name',
             'title_li' => '',
+            'exclude' => '24',
           )));
         echo "</ul>";
       echo '</div>';
