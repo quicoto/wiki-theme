@@ -27,14 +27,15 @@
 	<meta name="msapplication-config" content="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/browserconfig.xml">
 	<meta name="theme-color" content="#00b4b3">
 
-
-
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php get_template_part( 'template-parts/drawer' ); ?>
+
 <?php wp_body_open(); ?>
 <div id="page">
 	<header id="masthead" class="site-header bg-primary text-white pt-3 pb-3 mb-3">
@@ -42,11 +43,18 @@
 			<div class="row">
 				<div class="col-12">
 					<nav class="navbar navbar-expand-md navbar-dark" role="navigation">
-					<h1 class="site-title navbar-brand"><a class="text-decoration-none text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">📝 <?php bloginfo( 'name' ); ?></a></h1>
+
 							<!-- Brand and toggle get grouped for better mobile display -->
 							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
 									<span class="navbar-toggler-icon"></span>
 							</button>
+
+							<h1 class="site-title navbar-brand"><a class="text-decoration-none text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">📝 <?php bloginfo( 'name' ); ?></a></h1>
+
+							<button class="navbar-toggler drawer-toggler" type="button">
+									<span class="navbar-toggler-icon"></span>
+							</button>
+
 							<?php
 							wp_nav_menu( array(
 									'theme_location'    => 'primary',
@@ -72,9 +80,8 @@
 
 	<div id="content" class="container mb-5">
 		<div class="row">
-			<div class="col-12 col-md-4">
+			<div class="col-12 col-md-4 d-none d-md-block">
 				<?php get_sidebar(); ?>
-				<hr>
 			</div>
 
 			<div class="col-12 col-md-8">

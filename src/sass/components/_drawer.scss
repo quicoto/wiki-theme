@@ -1,0 +1,34 @@
+.drawer-toggler * {
+  pointer-events: none;
+}
+
+.drawer {
+  .nav-main {
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    input {
+      display: none;
+    }
+
+    input:checked + .drawer-pages {
+      transform: translateX(0%);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .drawer-pages {
+      background: $white;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0);
+      height: 100vh;
+      margin: 0;
+      padding: 15px 15px 15px 30px;
+      position: fixed;
+      top: 0;
+      transform: translateX(-100%);
+      transition: all 0.35s ease;
+      width: 15em;
+      z-index: 1;
+    }
+  }
+}
