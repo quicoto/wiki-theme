@@ -28,6 +28,7 @@
       transform: translateX(-100%);
       transition: all 0.35s ease;
       width: 15em;
+      will-change: transform;
       z-index: 1;
     }
   }
