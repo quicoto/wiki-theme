@@ -16,5 +16,9 @@ jQuery( document ).ready(function() {
       $checkbox.prop("checked", false);
     }
   })
+
+  if (twemoji) {
+    twemoji.parse(document.body);
+  }
 });
 </script>
