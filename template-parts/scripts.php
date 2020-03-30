@@ -15,10 +15,6 @@ jQuery( document ).ready(function() {
     if (!event.target.classList.contains(drawerTogglerClass) && $checkbox) {
       $checkbox.prop("checked", false);
     }
-  })
-
-  if (window.twemoji) {
-    window.twemoji.parse(document.body);
-  }
+  });
 });
 </script>
