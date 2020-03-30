@@ -17,8 +17,8 @@ jQuery( document ).ready(function() {
     }
   })
 
-  if (twemoji) {
-    twemoji.parse(document.body);
+  if (window.twemoji) {
+    window.twemoji.parse(document.body);
   }
 });
 </script>
