@@ -16,8 +16,6 @@ require_once get_template_directory() . '/inc/theme-colors.php';
 
 require_once get_template_directory() . '/inc/responsive-embeds.php';
 
-require_once get_template_directory() . '/inc/emojis-everywhere.php';
-
 // Deactivate WPADMINBAR
 add_filter('show_admin_bar', '__return_false');
 
