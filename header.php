@@ -26,9 +26,6 @@
 	<meta name="msapplication-TileColor" content="#00b4b3">
 	<meta name="msapplication-config" content="<?php echo get_stylesheet_directory_uri() ?>/assets/icons/browserconfig.xml">
 	<meta name="theme-color" content="#00b4b3">
-
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=swap" rel="stylesheet">
-
 	<?php wp_head(); ?>
 </head>
 
