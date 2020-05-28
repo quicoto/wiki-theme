@@ -170,3 +170,8 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * List sub pages shortcode
+ */
+require get_template_directory() . '/inc/sub-pages-shortcode.php';
