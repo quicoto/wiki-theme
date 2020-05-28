@@ -11,6 +11,7 @@ function wiki_childpages() {
   if ( $childpages ) {
     $string = '<span class="h3 d-block">Sub pages</span>';
     $string = $string . '<ul>' . $childpages . '</ul>';
+    $string = $string . '<hr>';
   }
 
   return $string;
