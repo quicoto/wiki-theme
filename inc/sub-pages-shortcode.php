@@ -9,7 +9,8 @@ function wiki_childpages() {
     $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
 
   if ( $childpages ) {
-    $string = '<ul>' . $childpages . '</ul>';
+    $string = '<span class="h3 d-block">Sub pages</span>';
+    $string = $string . '<ul>' . $childpages . '</ul>';
   }
 
   return $string;

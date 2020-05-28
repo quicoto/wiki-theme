@@ -4,3 +4,11 @@
   font-size: 85%;
   padding-left: 3px;
 }
+
+.entry-content {
+  ul, ol {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
