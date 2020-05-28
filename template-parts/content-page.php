@@ -25,6 +25,7 @@
 
 	<div class="entry-content">
 		<?php
+			echo do_shortcode( '[wiki_childpages]' );
 			the_content();
 		?>
 	</div><!-- .entry-content -->
