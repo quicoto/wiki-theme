@@ -3,7 +3,7 @@
 function wiki_childpages() {
   global $post;
 
-  $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+  $childpages = wp_list_pages( 'sort_column=post_name&title_li=&child_of=' . $post->ID . '&echo=0' );
 
   if ( $childpages ) {
     $string = '<span class="h3 d-block">Sub pages</span>';
