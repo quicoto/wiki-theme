@@ -77,9 +77,9 @@
 
 	<div id="content" class="container mb-5">
 		<div class="row">
-			<div class="col-12 col-md-4 d-none d-md-block">
+			<div class="col-12 col-md-4 col-lg-3 d-none d-md-block">
 				<?php get_sidebar(); ?>
 			</div>
 
-			<div class="col-12 col-md-8">
+			<div class="col-12 col-md-8 col-lg-9">
 
