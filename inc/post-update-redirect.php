@@ -1,7 +1,14 @@
 <?php
 
-add_action( 'save_post', 'redirect_user_page_list', 10, 3 );
+add_filter( 'redirect_post_location', 'wpse_124132_redirect_post_location' );
 
-function redirect_user_page_list( $post_ID) {
-  wp_redirect(get_post_permalink($post_ID));
+/**
+ * Redirect to the edit.php on post save or publish.
+ */
+function wpse_124132_redirect_post_location( $location ) {
+    if ( isset( $_POST['save'] ) || isset( $_POST['publish'] ) ) {
+      return admin_url( "edit.php" );
+    }
+
+    return $location;
 }
