@@ -177,10 +177,3 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * List sub pages shortcode
  */
 require get_template_directory() . '/inc/sub-pages-shortcode.php';
-
-
-/**
- * Redirect after post update
- */
-require get_template_directory() . '/inc/post-update-redirect.php';
-
