@@ -12,7 +12,7 @@
 <div class="row">
 	<div class="col mb-4">
 		<?php echo do_shortcode("[breadcrumb]"); ?>
-		<a class="btn btn-outline-primary d-inline-block float-right" href="<?=get_edit_post_link()?>" role="button"><span class="edit-icon">✏️</span> Edit</a>
+		<a id="edit-button" class="btn btn-outline-primary d-inline-block float-right" href="<?=get_edit_post_link()?>" role="button"><span class="edit-icon">✏️</span> Edit</a>
 	</div>
 </div>
 

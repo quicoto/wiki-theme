@@ -136,11 +136,13 @@ add_action( 'widgets_init', 'wiki_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wiki_scripts() {
-	$version = '1.3.4';
+	$version = '1.4.0';
 
 	wp_enqueue_style( 'wiki-style', get_stylesheet_uri(), array(), $version );
 
 	wp_enqueue_script( 'wiki-navigation', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), $version, true );
+
+	wp_enqueue_script( 'wiki-scripts', get_template_directory_uri() . '/js/main.js', array(), $version, true );
 }
 add_action( 'wp_enqueue_scripts', 'wiki_scripts' );
 
@@ -175,3 +177,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * List sub pages shortcode
  */
 require get_template_directory() . '/inc/sub-pages-shortcode.php';
+
+
+/**
+ * Redirect after post update
+ */
+require get_template_directory() . '/inc/post-update-redirect.php';
+
