@@ -136,7 +136,7 @@ add_action( 'widgets_init', 'wiki_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wiki_scripts() {
-	$version = '1.4.4';
+	$version = '1.4.5';
 
 	wp_enqueue_style( 'wiki-style', get_stylesheet_uri(), array(), $version );
 
