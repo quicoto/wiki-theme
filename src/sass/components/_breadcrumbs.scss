@@ -1,4 +1,8 @@
 .breadcrumb-container {
   float: left;
-  font-size: 1rem;
+
+  .site-main & {
+    font-size: 1rem;
+  }
 }
+
