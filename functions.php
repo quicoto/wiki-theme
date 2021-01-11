@@ -4,8 +4,6 @@ require get_template_directory() . '/inc/automatic-updates.php';
 
 require get_template_directory() . '/inc/private-site.php';
 
-require get_template_directory() . '/inc/login-redirect.php';
-
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 require_once get_template_directory() . '/inc/table-of-contents.php';

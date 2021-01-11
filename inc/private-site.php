@@ -2,7 +2,8 @@
 
 function private_mode() {
   if ( !is_user_logged_in() ) {
-    header('Location: '.get_home_url() . '/wp-admin/');
+    header('Location: '. wp_login_url($_SERVER['REQUEST_URI']));
+
   }
 }
 
