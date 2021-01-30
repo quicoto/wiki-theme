@@ -1,6 +1,9 @@
 (function () {
   function _onKeydown(event) {
-    if (event.key === 'e') {
+    const $target = event.target;
+    const isSearch = $target.getAttribute('name') === 's';
+
+    if (event.key === 'e' && !isSearch) {
       const $editButton = document.querySelector('#edit-button');
 
       if ($editButton) {
