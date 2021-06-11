@@ -12,6 +12,7 @@ module.exports = {
     'current_page_ancestor',
     'page_item_has_children',
     'lwptoc',
-    'lwptoc_item'
+    'lwptoc_item',
+    'img'
   ]
 }
