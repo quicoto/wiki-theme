@@ -134,13 +134,13 @@ add_action( 'widgets_init', 'wiki_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wiki_scripts() {
-	$version = '1.5.4';
+	$version = '1.5.5';
 
 	wp_enqueue_style( 'wiki-style', get_stylesheet_uri(), array(), $version );
 
 	wp_enqueue_script( 'wiki-navigation', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), $version, true );
 
-	wp_enqueue_script( 'wiki-scripts', get_template_directory_uri() . '/js/main.js', array(), $version, true );
+	wp_enqueue_script( 'wiki-scripts', get_template_directory_uri() . '/js/main.min.js', array(), $version, true );
 }
 add_action( 'wp_enqueue_scripts', 'wiki_scripts' );
 
