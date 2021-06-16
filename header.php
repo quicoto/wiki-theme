@@ -35,47 +35,41 @@
 
 <?php wp_body_open(); ?>
 <div id="page">
-	<header id="masthead" class="site-header bg-primary text-white pt-3 pb-3 mb-3">
+	<header id="masthead" class="site-header text-white mb-3 bg-primary">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<nav class="navbar navbar-expand-md navbar-dark" role="navigation">
+					<nav class="navbar navbar-expand-md navbar-dark">
+						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">📝 <?php bloginfo( 'name' ); ?></a>
+						<button class="navbar-toggler drawer-toggler" type="button">
+								<span class="navbar-toggler-icon"></span>
+						</button>
 
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-							</button>
-
-							<h1 class="site-title navbar-brand"><a class="text-decoration-none text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">📝 <?php bloginfo( 'name' ); ?></a></h1>
-
-							<button class="navbar-toggler drawer-toggler" type="button">
-									<span class="navbar-toggler-icon"></span>
-							</button>
-
-							<?php
-							wp_nav_menu( array(
-									'theme_location'    => 'primary',
-									'depth'             => 2,
-									'container'         => 'div',
-									'container_class'   => 'collapse navbar-collapse',
-									'container_id'      => 'primary-menu',
-									'menu_class'        => 'nav navbar-nav ml-auto',
-									'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-									'walker'            => new WP_Bootstrap_Navwalker(),
-							) );
-							?>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mr-auto">
+								<?php
+									wp_nav_menu( array(
+											'theme_location'    => 'primary',
+											'depth'             => 2,
+											'container'         => 'div',
+											'container_class'   => 'collapse navbar-collapse',
+											'container_id'      => 'primary-menu',
+											'menu_class'        => 'nav navbar-nav ml-auto',
+											'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+											'walker'            => new WP_Bootstrap_Navwalker(),
+									) );
+									?>
+							</ul>
+							<?php get_search_form(); ?>
+						</div>
 					</nav>
 				</div> <!-- .col -->
-
-				<div class="col-12 col-lg-6 offset-lg-3 pt-3">
-					<?php get_search_form(); ?>
-				</div>
 			</div> <!-- .row -->
 		</div> <!-- .container -->
 
 	</header><!-- #masthead -->
 
-	<div id="content" class="container mb-5">
+	<div id="content" class="container mb-1">
 		<div class="row">
 			<div class="col-12 col-md-4 col-lg-3 d-none d-md-block">
 				<?php get_sidebar(); ?>

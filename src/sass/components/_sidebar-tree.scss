@@ -4,8 +4,6 @@
 }
 
 .widget_wiki-pages-list {
-  background: $primary;
-  color: white;
   padding: 1.5rem;
 
   .navbar .widget-title {
@@ -26,7 +24,6 @@
   }
 
   .page_item {
-    color: white;
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
@@ -35,7 +32,6 @@
     overflow: hidden;
 
     a {
-      color: white;
       padding: 5px 7px;
       margin: 0 0 5px 20px;
       width: 100%;

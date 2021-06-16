@@ -10,7 +10,7 @@
  */
 
 ?>
-			<p class="toc-jump text-right mb-0">
+			<p class="toc-jump text-right pb-1">
 				<a href="#content">Back to top &uarr;</a>
 			</p>
 			</div> <!--.col -->
