@@ -13,6 +13,8 @@ module.exports = {
     'page_item_has_children',
     'lwptoc',
     'lwptoc_item',
-    'img'
+    'img',
+    'frontend_editor_ifr',
+    'hidden'
   ]
 }
