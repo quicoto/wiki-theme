@@ -134,7 +134,7 @@ add_action( 'widgets_init', 'wiki_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wiki_scripts() {
-	$version = '1.5.7';
+	$version = '1.6.0';
 
 	wp_enqueue_style( 'wiki-style', get_stylesheet_uri(), array(), $version );
 
@@ -175,3 +175,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * List sub pages shortcode
  */
 require get_template_directory() . '/inc/sub-pages-shortcode.php';
+
+/**
+ * List sub pages shortcode
+ */
+require get_template_directory() . '/inc/rest-api.php';

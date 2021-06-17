@@ -18,7 +18,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title d-inline-block pb-0">', '</h1>' ); ?>
-		<button id="edit-button" class="btn btn-outline-primary float-right" role="button">Edit</button>
+		<button type="button" class="btn btn-outline-primary frontend-editor-edit float-right" role="button">Edit</button>
+		<button type="button" class="btn btn-secondary frontend-editor-cancel float-right ml-2" hidden>Cancel</button>
 		<button type="button" class="btn btn-primary frontend-editor-update float-right" hidden>Update</button>
 	</header><!-- .entry-header -->
 
@@ -53,10 +54,8 @@
 		</div>
 	</div>
 
+	<?= do_shortcode( '[wiki_childpages]' ); ?>
 	<div class="entry-content">
-		<?php
-			echo do_shortcode( '[wiki_childpages]' );
-			the_content();
-		?>
+		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

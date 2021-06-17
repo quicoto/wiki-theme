@@ -2,9 +2,10 @@
   const _$ = {};
 
   function _setElements() {
-    _$.editButton = document.querySelector('#edit-button');
     _$.frontendEditor = document.querySelector('.frontend-editor');
+    _$.editButton = document.querySelector('.frontend-editor-edit');
     _$.updateButton = document.querySelector('.frontend-editor-update');
+    _$.cancelButton = document.querySelector('.frontend-editor-cancel');
     _$.entryContent = document.querySelector('.entry-content');
   }
 
@@ -13,11 +14,13 @@
     _$.editButton.setAttribute('hidden', 'true');
     _$.frontendEditor.removeAttribute('hidden');
     _$.updateButton.removeAttribute('hidden');
+    _$.cancelButton.removeAttribute('hidden');
   }
 
   function _hideEditor() {
     _$.frontendEditor.setAttribute('hidden', 'true');
     _$.updateButton.setAttribute('hidden', 'true');
+    _$.cancelButton.setAttribute('hidden', 'true');
     _$.editButton.removeAttribute('hidden');
     _$.entryContent.removeAttribute('hidden');
   }
@@ -33,7 +36,8 @@
 
   function _onClickUpdate() {
     const data = {
-      content: tinymce.activeEditor.getContent()
+      ID:  _$.frontendEditor.dataset.postid,
+      post_content: tinymce.activeEditor.getContent()
     };
     const options = {
       method: 'POST',
@@ -42,9 +46,10 @@
       },
       body: JSON.stringify(data),
     };
-    fetch(`${_$.frontendEditor.dataset.wpurl}wp/v2/pages/${_$.frontendEditor.dataset.postid}`, options)
+    fetch(`${_$.frontendEditor.dataset.wpurl}wiki/v1/update-item/`, options)
       .then(() => {
         _hideEditor();
+        _$.entryContent.innerHTML = tinymce.activeEditor.getContent();
       });
   }
 
@@ -52,9 +57,14 @@
     _showEditor();
   }
 
+  function _onClickCancel() {
+    _hideEditor();
+  }
+
   function _addEventListeners() {
     document.addEventListener('keydown', _onKeydown);
     _$.editButton.addEventListener('click', _onClickEdit);
+    _$.cancelButton.addEventListener('click', _onClickUpdate);
     _$.updateButton.addEventListener('click', _onClickUpdate);
   }
 
